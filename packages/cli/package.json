@@ -1,0 +1,29 @@
+{
+  "name": "@openint/mcp-cli",
+  "version": "1.0.1",
+  "description": "CLI tool related to MCP Docker instances",
+  "main": "dist/index.js",
+  "bin": {
+    "openint-mcp-cli": "./dist/index.js"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "FORCE_DOCKER_BUILD=true tsx ./src/index.ts --dev",
+    "publish:npm": "pnpm build && npm publish --access public"
+  },
+  "dependencies": {
+    "execa": "^8.0.1",
+    "fs-extra": "^11.2.0",
+    "simple-git": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

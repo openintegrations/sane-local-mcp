@@ -1,0 +1,21 @@
+{
+  "name": "@openint/mcp-proxy",
+  "version": "1.0.2",
+  "description": "MCP Proxy Server",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "publish:npm": "pnpm build && npm publish --access public"
+  },
+  "dependencies": {
+    "execa": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

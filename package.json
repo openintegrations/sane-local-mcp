@@ -1,0 +1,20 @@
+{
+  "name": "mcp-docker-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root workspace for MCP Docker CLI, Proxy, and Dockerfiles",
+  "packageManager": "pnpm@8.6.11+sha512.8ea927a69ba3e39b43cc9b0b70baa4031cad047657231f494d890636ad3fee9491820a62a3dc11c530e3e0d0368a53873e52790558c1e488f9771eb9c28322e4",
+  "scripts": {
+    "build": "pnpm -r build",
+    "cli:dev": "pnpm --filter @openint/mcp-cli dev",
+    "cli:prod": "pnpm --filter @openint/mcp-cli prod",
+    "start:proxy": "pnpm --filter proxy start",
+    "docker:build:dev": "docker build --no-cache -t openint-mcp-dev -f packages/docker/dev/Dockerfile .",
+    "docker:build:prod": "docker build --no-cache -t openint-mcp-prod -f packages/docker/prod/Dockerfile .",
+    "docker:publish:prod": "docker buildx build --no-cache --platform linux/amd64,linux/arm64 --push -t openint/openint-mcp:latest -f packages/docker/prod/Dockerfile .",
+    "publish:npm:cli": "pnpm --filter @openint/mcp-cli publish:npm",
+    "publish:npm:proxy": "pnpm --filter @openint/mcp-proxy publish:npm",
+    "publish:all": "pnpm publish:npm:cli && pnpm publish:npm:proxy && pnpm docker:publish:prod",
+    "clean": "rm -rf packages/*/dist node_modules"
+  }
+}

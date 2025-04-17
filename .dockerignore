@@ -1,0 +1,16 @@
+node_modules
+**/.DS_Store
+**/.git
+**/.gitignore
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Exclude build artifacts and node_modules from packages within the build context
+# Although the Dockerfile copies selectively, this prevents them from being sent to the daemon
+packages/*/dist
+packages/*/node_modules
+
+# Exclude environment files
+.env* 
