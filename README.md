@@ -1,4 +1,4 @@
-# sane-local-mcp (FREE startup idea!)
+# Sane Local MCP (+ FREE startup idea!)
 
 ![Sane Local MCP](./images/sane-local-mcp.png)
 
