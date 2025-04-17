@@ -1,6 +1,6 @@
 # sane-local-mcp (FREE startup idea!)
 
-[Sane Local MCP](/images/sane-local-mcp.png)
+![Sane Local MCP](./images/sane-local-mcp.png)
 
 CLI to wrap any nodejs based STD/IO local Model Context Protocol (MCP) server in a thin docker container for improved monitoring and security
 
@@ -119,7 +119,7 @@ graph TD
         CLI -- 2. docker run ... --> D[Docker Daemon]
     end
 
-    subgraph Docker Container (openint/openint-mcp:latest)
+    subgraph Docker Container openint/openint-mcp:latest
         D -- 3. Starts Container --> C{Container}
         C -- 4. Runs Entrypoint --> E[node .../proxy/dist/index.js]
         E -- 5. Receives Args --> E
@@ -130,9 +130,6 @@ graph TD
     C -- 8. Pipes I/O --> D
     D -- 9. Pipes I/O --> CLI
     CLI -- 10. Displays Output/Handles Input --> U
-
-    style C fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#ccf,stroke:#333,stroke-width:1px
 ```
 
 ## Under the hood
