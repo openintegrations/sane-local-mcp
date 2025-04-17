@@ -112,24 +112,24 @@ This workspace uses a client-server model where the CLI tool acts as the client 
 ```mermaid
 graph TD
     subgraph User Environment
-        U[User Terminal] -- 1. npx @openint/mcp-cli ... --> CLI["@openint/mcp-cli (Local)"]
+        U[User Terminal] -- npx @openint/mcp-cli ... --> CLI["@openint/mcp-cli (Local)"]
     end
 
     subgraph Docker Host
-        CLI -- 2. docker run ... --> D[Docker Daemon]
+        CLI -- docker run ... --> D[Docker Daemon]
     end
 
     subgraph Docker Container openint/openint-mcp:latest
-        D -- 3. Starts Container --> C{Container}
-        C -- 4. Runs Entrypoint --> E[node .../proxy/dist/index.js]
-        E -- 5. Receives Args --> E
-        E -- 6. execa(cmd, args) --> Cmd(Executed Command e.g., npx some-mcp-server)
-        Cmd -- 7. Output/Input/Error --> C
+        D -- Starts Container --> C{Container}
+        C -- Runs Entrypoint --> E[node .../proxy/dist/index.js]
+        E -- Receives Args --> E
+        E -- execa(cmd, args) --> Cmd(Executed Command e.g., npx some-mcp-server)
+        Cmd -- Output/Input/Error --> C
     end
 
-    C -- 8. Pipes I/O --> D
-    D -- 9. Pipes I/O --> CLI
-    CLI -- 10. Displays Output/Handles Input --> U
+    C -- Pipes I/O --> D
+    D -- Pipes I/O --> CLI
+    CLI -- Displays Output/Handles Input --> U
 ```
 
 ## Under the hood
