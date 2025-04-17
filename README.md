@@ -1,6 +1,10 @@
 # sane-local-mcp (FREE startup idea!)
 
+[Sane Local MCP](/images/sane-local-mcp.png)
+
 CLI to wrap any nodejs based STD/IO local Model Context Protocol (MCP) server in a thin docker container for improved monitoring and security
+
+TLDR;
 
 1. Local MCP isn't safe, but it doesn't need to be this way
 2. We introduce a preview CLI that helps fix it (Sane Local MCP)
@@ -80,7 +84,7 @@ For Cursor IDE, add the following to your MCP configuration:
 
 This enables you to monitor each of your running MCP servers within the Docker Desktop UI and get centralized logging and diagnostics on it.
 
-![Docker Desktop UI](./images/docker_desktop_ui.png)
+![Docker Desktop UI](./images/docker-screenshot.png)
 
 ## How to improve this (Free startup ideas!):
 
@@ -108,7 +112,7 @@ This workspace uses a client-server model where the CLI tool acts as the client 
 ```mermaid
 graph TD
     subgraph User Environment
-        U[User Terminal] -- 1. npx @openint/mcp-cli ... --> CLI{@openint/mcp-cli (Local)}
+        U[User Terminal] -- 1. npx @openint/mcp-cli ... --> CLI["@openint/mcp-cli (Local)"]
     end
 
     subgraph Docker Host
